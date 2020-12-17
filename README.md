@@ -1,5 +1,5 @@
 # Stock_trading_with_ML
-## Compare the performance of 3 portfolios: hand-crafted strategy, benchmark and ML portfolio 
+## Compare the performance of 3 portfolios: hand-crafted strategy, benchmark and Machine Learning Strategy 
 
 
 In this project, I compared three stock portfolios below:
