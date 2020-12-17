@@ -21,8 +21,6 @@ from marketsimcode import compute_portvals
 from util import get_data, plot_data
 import matplotlib.pyplot as plt
 
-def author():
-    return 'ehsiao8'
 
 def process_trades(df, symbol):
     df = df.loc[df[symbol] != 0]
