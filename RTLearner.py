@@ -8,10 +8,8 @@ class RTLearner(object):
     def __init__(self, leaf_size = 1, verbose = False): 
         self.leaf_size = leaf_size
         self.verbose = verbose
-		  	   		     		  		  		    	 		 		   		 		  
-  		  	   		     		  		  		    	 		 		   		 		
-        
-        
+
+	
     def build_tree(self, features, labels):
                 
         leaf = np.array([-1, stats.mode(labels).mode[0], np.nan, np.nan])
@@ -78,8 +76,4 @@ class RTLearner(object):
         for idx, f in enumerate(features):
             pred[idx] = self.find_leaf_value(f, self.tree)
         return pred
-		  	   		     		  		  		    	 		 		   		 		  
-  		  	   		     		  		  		    	 		 		   		 		  
-  		  	   		     		  		  		    	 		 		   		 		  
-# if __name__ == "__main__":  		  	   		     		  		  		    	 		 		   		 		  
-#     print("the secret clue is 'zzyzx'")  		  	   		     		  		  		    	 		 		   		 		  
+		  	   		     		  		  		    	 		 		   		 		 	  	   		     		  		  		    	 		 		   		 		  
