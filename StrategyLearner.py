@@ -22,9 +22,6 @@ class StrategyLearner(object):
     :param commission: The commission amount charged, defaults to 0.0  		  	   		     		  		  		    	 		 		   		 		  
     :type commission: float  		  	   		     		  		  		    	 		 		   		 		  
     """  		  	   		     		  		  		    	 		 		   		 		  
-    #author
-    def author(self):
-        return 'ehsiao8'  
    
     # constructor  		  	   		     		  		  		    	 		 		   		 		  
     def __init__(self, verbose=False, impact=0.005, commission=9.95
