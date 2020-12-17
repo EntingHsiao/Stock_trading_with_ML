@@ -47,8 +47,3 @@ class BagLearner(object):
             pred[i, :] = self.learners[i].query(features)
 
         return stats.mode(pred).mode[0] # convert regression learner to use mode rather than mean
-
-
-
-# if __name__ == "__main__":
-#     print("the secret clue is 'zzyzx'") 
