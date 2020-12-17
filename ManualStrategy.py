@@ -169,9 +169,3 @@ class ManualStrategy(object):
         plt.legend()
         plt.savefig("Manual Strategy - Out-sample.png", bbox_inches='tight')
         #plt.show()
-
-
-    def author(self):  		  	   		     		  		  		    	 		 		   		 		   		  		 		   
-        return "ehsiao8"  # replace tb34 with your Georgia Tech username 
-
-
