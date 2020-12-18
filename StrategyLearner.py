@@ -1,5 +1,3 @@
-    	 		 		   		 		  
-  		  	   		     		  		  		    	 		 		   		 		  
 import datetime as dt                                                                                         
 import random                                                                                         
 import pandas as pd
@@ -13,8 +11,7 @@ class StrategyLearner(object):
 	     		  		  		    	 		 		   		 		  
    
     # constructor  		  	   		     		  		  		    	 		 		   		 		  
-    def __init__(self, verbose=False, impact=0.005, commission=9.95
-):  		  	   		     		  		  		    	 		 		   		 		  
+    def __init__(self, verbose=False, impact=0.005, commission=9.95):  		  	   		     		  		  		    	 		 		   		 		  
         """  		  	   		     		  		  		    	 		 		   		 		  
         Constructor method  		  	   		     		  		  		    	 		 		   		 		  
         """  		  	   		     		  		  		    	 		 		   		 		  
@@ -24,13 +21,7 @@ class StrategyLearner(object):
         self.learner = bl.BagLearner(learner = rt.RTLearner, kwargs = {"leaf_size":10}, bags = 25, boost = False, verbose = False)
                                                                                           
                                                                                         
-    def add_evidence(                                                                                         
-        self,                                                                                         
-        symbol="JPM",                                                                                         
-        sd=dt.datetime(2008, 1, 1),                                                                                           
-        ed=dt.datetime(2009, 12, 31),                                                                                           
-        sv=10000,                                                                                         
-    ):                                                                                            
+    def add_evidence(self, symbol="JPM", sd=dt.datetime(2008, 1, 1), ed=dt.datetime(2009, 12, 31), sv=10000):                                                                                            
                                                                                       
         syms = [symbol]                                                                                           
         dates = pd.date_range(sd, ed)                                                                                         
@@ -65,15 +56,8 @@ class StrategyLearner(object):
         # Training
         self.learner.add_evidence(trainX, trainY)
                 
-
-                                                                                       
-    def testPolicy(                                                                                           
-        self,                                                                                         
-        symbol="JPM",                                                                                         
-        sd=dt.datetime(2010, 1, 1),                                                                                           
-        ed=dt.datetime(2011, 12, 31),                                                                                           
-        sv=10000,                                                                                         
-    ):                                                                                            
+                                                                                  
+    def testPolicy(self, symbol="JPM", sd=dt.datetime(2010, 1, 1), ed=dt.datetime(2011, 12, 31), sv=10000):                                                                                            
                                                                                        
         syms = [symbol]                                                                                                                                                               
         dates = pd.date_range(sd, ed)                                                                                         
