@@ -1,14 +1,12 @@
 """
 Experiment 2
 
-Conduct an experiment with your StrategyLearner that shows how changing the value of impact should affect
+Conduct an experiment with StrategyLearner that shows how changing the value of impact should affect
 in-sample trading behavior (use at least two metrics).
 Trade JPM on the in-sample period with a commission of $0.00.
 
 The in-sample period is January 1, 2008 to December 31, 2009.
 The out-of-sample/testing period is January 1, 2010 to December 31 2011.
-
-
 """
 
 import datetime as dt
