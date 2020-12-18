@@ -12,8 +12,7 @@ class ManualStrategy(object):
     def __init__(self, verbose = False):
         self.verbose = verbose
 
- 
-    
+
     def testPolicy(self, symbol, sd, ed, sv):
         df = get_data([symbol], pd.date_range(sd, ed))
         price_df = df[[symbol]]
@@ -27,15 +26,15 @@ class ManualStrategy(object):
         df_trades[:] = 0
         dates = df_trades.index
 
-        #normalize prices 
+        # normalize prices 
         price_df = price_df / price_df.iloc[0]
-        #use SMA to be the trade signal and set the rolling days # as 20
+        # use SMA to be the trade signal and set the rolling days # as 20
         price_df['SMA']= compute_sma(price_df, 20)
-        #use MACD to be the trade signal 
+        # use MACD to be the trade signal 
         price_df['MACD']= compute_macd(price_df)
-        #use KD to be the trade signal 
+        # use KD to be the trade signal 
         price_df['%KD'] = compute_kd(price_df)
-       # price_df['%KD'] is postive: sell; price_df['%KD'] is negative: buy  
+        #price_df['%KD'] is postive: sell; price_df['%KD'] is negative: buy  
 
         net_position = 0   
 
@@ -86,19 +85,19 @@ class ManualStrategy(object):
 
     def computeMetrics(self, df_benchmark, df_optimal):
 
-    #Cumulative return of the benchmark and portfolio
+        # Cumulative return of the benchmark and portfolio
         cr_benchmark = df_benchmark[0][-1] / df_benchmark[0][0] - 1
         cr_optimal = df_optimal[0][-1] / df_optimal[0][0] - 1
 
-    # daily return in percentage
+        # daily return in percentage
         dp_benchmark = (df_benchmark / df_benchmark.shift() - 1).iloc[1:]
         dp_optimal = (df_optimal / df_optimal.shift() - 1).iloc[1:]
 
-    #Stdev of daily returns of benchmark and portfolio
+        # Stdev of daily returns of benchmark and portfolio
         sddr_benchmark = dp_benchmark.std()
         sddr_optimal = dp_optimal.std()
 
-    #Mean of daily returns of benchmark and portfolio
+        # Mean of daily returns of benchmark and portfolio
         adr_benchmark = dp_benchmark.mean()
         adr_optimal = dp_optimal.mean()
         print("Cumulative return- Benchmark: " +str(cr_benchmark))
