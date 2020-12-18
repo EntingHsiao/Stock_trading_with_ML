@@ -1,12 +1,3 @@
-"""
-Code implementing a TheoreticallyOptimalStrategy object
-It should implement testPolicy() which returns a trades data frame
-The main part of this code should call marketsimcode as necessary to generate the plots used in the report
-"""
-
-
-
-from util import get_data, plot_data
 import datetime as dt
 import pandas as pd
 import numpy as np
