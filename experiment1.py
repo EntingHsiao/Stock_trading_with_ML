@@ -1,7 +1,7 @@
 """
 Experiment 1
 
-Compare your Manual Strategy with your Strategy Learner in-sample trading JPM. Create a chart that shows:
+Compare Manual Strategy with Strategy Learner in-sample trading JPM. Create a chart that shows:
 
 Value of the ManualStrategy portfolio (normalized to 1.0 at the start)
 Value of the StrategyLearner portfolio (normalized to 1.0 at the start)
@@ -9,8 +9,6 @@ Value of the Benchmark portfolio (normalized to 1.0 at the start)
 
 The in-sample period is January 1, 2008 to December 31, 2009.
 The out-of-sample/testing period is January 1, 2010 to December 31 2011.
-
-
 """
 
 import datetime as dt
