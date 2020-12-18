@@ -12,7 +12,7 @@ import pandas as pd
 import util as ut
 import random
 import numpy as np
-import StrategyLearner as st
+import MLstrategy as st
 from marketsimcode import compute_portvals
 from util import get_data, plot_data
 import matplotlib.pyplot as plt
