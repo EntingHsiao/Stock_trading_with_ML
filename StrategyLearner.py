@@ -66,7 +66,7 @@ class StrategyLearner(object):
         self.learner.add_evidence(trainX, trainY)
                 
 
-    # this method should use the existing policy and test it against new data                                                                                         
+                                                                                       
     def testPolicy(                                                                                           
         self,                                                                                         
         symbol="JPM",                                                                                         
