@@ -11,7 +11,7 @@ import pandas as pd
 import util as ut
 import random
 import numpy as np
-import StrategyLearner as st
+import MLstrategy as st
 import ManualStrategy as ms
 from marketsimcode import compute_portvals
 from util import get_data, plot_data
@@ -44,7 +44,7 @@ def experiment1():
     ms_trades = process_trades(ms_trades, 'JPM')
     ms_portval = compute_portvals(ms_trades,sd,ed,100000,commission=9.95,impact=0.005)
     
-    # Strategy Learner
+    # ML Strategy
     learner = st.StrategyLearner(verbose = False, impact=0.005)
     learner.add_evidence(symbol="JPM",sd=dt.datetime(2008,1,1),ed=dt.datetime(2009,12,31),sv=100000)
     st_test = learner.testPolicy(symbol="JPM",sd=dt.datetime(2008,1,1),ed=dt.datetime(2009,12,31),sv=100000)
