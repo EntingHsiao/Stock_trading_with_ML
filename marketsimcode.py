@@ -1,19 +1,10 @@
-                                                                                          
-
-"""
-
-An improved version of your marketsim code that accepts a "trades" data frame (instead of a file). 
-More info on the trades data frame below.
-
-""" 
-
-                                                                                                                                                                         
+                                                                                                                                                                        
                                                                                           
 import datetime as dt                                                                                         
 import os   
 import numpy as np  
 import pandas as pd   
-from util import get_data, plot_data   
+ 
 
 def compute_portvals(                                                                                         
     orders_df,      
@@ -23,20 +14,6 @@ def compute_portvals(
     commission=0.0,                                                                                           
     impact=0.0,                                                                                           
 ):                                                                                            
-    """                                                                                           
-    Computes the portfolio values.                                                                                            
-                                                                                          
-    :param orders_file: Path of the order file or the file object                                                                                         
-    :type orders_file: str or file object                                                                                         
-    :param start_val: The starting value of the portfolio                                                                                         
-    :type start_val: int                                                                                          
-    :param commission: The fixed amount in dollars charged for each transaction (both entry and exit)                                                                                         
-    :type commission: float                                                                                           
-    :param impact: The amount the price moves against the trader compared to the historical data at each transaction                                                                                          
-    :type impact: float                                                                                           
-    :return: the result (portvals) as a single-column dataframe, containing the value of the portfolio for each trading day in the first column from start_date to end_date, inclusive.                                                                                           
-    :rtype: pandas.DataFrame                                                                                          
-    """                                                                                 
 
     df = orders_df
 
