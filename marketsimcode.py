@@ -1,19 +1,10 @@
-                                                                                                                                                                        
-                                                                                          
 import datetime as dt                                                                                         
 import os   
 import numpy as np  
 import pandas as pd   
  
 
-def compute_portvals(                                                                                         
-    orders_df,      
-    start_date, 
-    end_date,                                                                                 
-    start_val=100000,                                                                                         
-    commission=0.0,                                                                                           
-    impact=0.0,                                                                                           
-):                                                                                            
+def compute_portvals(orders_df, start_date, end_date, start_val=100000, commission=0.0, impact=0.0):                                                                                            
 
     df = orders_df
 
