@@ -15,8 +15,7 @@ class BagLearner(object):
         
         for i in range(bags):
             self.learners.append(learner(**self.kwargs))
-        
-        
+            
         
     def add_evidence(self, features, labels):
         
@@ -46,4 +45,4 @@ class BagLearner(object):
         for i in range(self.bags):
             pred[i, :] = self.learners[i].query(features)
 
-        return stats.mode(pred).mode[0] # convert regression learner to use mode rather than mean
+        return stats.mode(pred).mode[0]
