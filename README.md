@@ -25,8 +25,6 @@ Below are the descriptions for all related files:
 
 * marketsimcode.py: The code is used in ManualStrategy, StrategyLearner, experiment1, experiment2 to compute the portfolio values for generating metrics and charts.  
 
-* testproject.py: This is an entry point to test all the codes against the report and it will output all necessary charts and statistics for your report.
-
 * RTLearner.py: The code is called in StrategyLearner to train and test the model. It is the base learner used in BagLearner.py
 
 * BagLearner.py: The code is called in StrategyLearner to train and test the model.
