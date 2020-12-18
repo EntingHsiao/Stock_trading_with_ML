@@ -1,4 +1,3 @@
-
 import pandas as pd
 import numpy as np
 import datetime as dt
@@ -13,7 +12,7 @@ def normalize_stocks(prices):
     return prices / prices.iloc[0]
 
 
-#The function to return SMA
+# The function to return SMA
 # price < sma, BUY
 # price > sma, SELL
 
@@ -205,11 +204,9 @@ def compute_indicators(sd=dt.datetime(2008,1,1), ed=dt.datetime(2009,12,31), \
     axes[1].tick_params(labelrotation=45)
     plt.savefig("kd.png")
 
-
-
-
 def test_code():
     compute_indicators()
 
+    
 if __name__ == "__main__":
     test_code()
