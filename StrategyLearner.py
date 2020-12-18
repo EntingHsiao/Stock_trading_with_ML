@@ -4,24 +4,13 @@ import datetime as dt
 import random                                                                                         
 import pandas as pd
 from scipy import stats
-import util as ut
 import RTLearner as rt
 import BagLearner as bl
 from indicators import *  		  	   		     		  		  		    	 		 		   		 		  
   		  	   		     		  		  		    	 		 		   		 		  
   		  	   		     		  		  		    	 		 		   		 		  
 class StrategyLearner(object):  		  	   		     		  		  		    	 		 		   		 		  
-    """  		  	   		     		  		  		    	 		 		   		 		  
-    A strategy learner that can learn a trading policy using the same indicators used in ManualStrategy.  		  	   		     		  		  		    	 		 		   		 		  
-  		  	   		     		  		  		    	 		 		   		 		  
-    :param verbose: If “verbose” is True, your code can print out information for debugging.  		  	   		     		  		  		    	 		 		   		 		  
-        If verbose = False your code should not generate ANY output.  		  	   		     		  		  		    	 		 		   		 		  
-    :type verbose: bool  		  	   		     		  		  		    	 		 		   		 		  
-    :param impact: The market impact of each transaction, defaults to 0.0  		  	   		     		  		  		    	 		 		   		 		  
-    :type impact: float  		  	   		     		  		  		    	 		 		   		 		  
-    :param commission: The commission amount charged, defaults to 0.0  		  	   		     		  		  		    	 		 		   		 		  
-    :type commission: float  		  	   		     		  		  		    	 		 		   		 		  
-    """  		  	   		     		  		  		    	 		 		   		 		  
+	     		  		  		    	 		 		   		 		  
    
     # constructor  		  	   		     		  		  		    	 		 		   		 		  
     def __init__(self, verbose=False, impact=0.005, commission=9.95
@@ -34,7 +23,7 @@ class StrategyLearner(object):
         self.commission = commission  	
         self.learner = bl.BagLearner(learner = rt.RTLearner, kwargs = {"leaf_size":10}, bags = 25, boost = False, verbose = False)
                                                                                           
-    # this method should create a QLearner, and train it for trading                                                                                          
+                                                                                        
     def add_evidence(                                                                                         
         self,                                                                                         
         symbol="JPM",                                                                                         
@@ -42,22 +31,7 @@ class StrategyLearner(object):
         ed=dt.datetime(2009, 12, 31),                                                                                           
         sv=10000,                                                                                         
     ):                                                                                            
-        """                                                                                           
-        Trains your strategy learner over a given time frame.                                                                                         
-                                                                                          
-        :param symbol: The stock symbol to train on                                                                                           
-        :type symbol: str                                                                                         
-        :param sd: A datetime object that represents the start date, defaults to 1/1/2008                                                                                         
-        :type sd: datetime                                                                                            
-        :param ed: A datetime object that represents the end date, defaults to 1/1/2009                                                                                           
-        :type ed: datetime                                                                                            
-        :param sv: The starting value of the portfolio                                                                                            
-        :type sv: int                                                                                         
-        """                                                                                           
-                                                                                          
-        # add your code to do learning here                                                                                           
-                                                                                          
-        # example usage of the old backward compatible util function                                                                                          
+                                                                                      
         syms = [symbol]                                                                                           
         dates = pd.date_range(sd, ed)                                                                                         
         prices_all = ut.get_data(syms, dates)  # automatically adds SPY                                                                                           
@@ -100,23 +74,7 @@ class StrategyLearner(object):
         ed=dt.datetime(2011, 12, 31),                                                                                           
         sv=10000,                                                                                         
     ):                                                                                            
-        """                                                                                           
-        Tests your learner using data outside of the training data                                                                                            
-                                                                                          
-        :param symbol: The stock symbol that you trained on on                                                                                            
-        :type symbol: str                                                                                         
-        :param sd: A datetime object that represents the start date, defaults to 1/1/2008                                                                                         
-        :type sd: datetime                                                                                            
-        :param ed: A datetime object that represents the end date, defaults to 1/1/2009                                                                                           
-        :type ed: datetime                                                                                            
-        :param sv: The starting value of the portfolio                                                                                            
-        :type sv: int                                                                                         
-        :return: A DataFrame with values representing trades for each day. Legal values are +1000.0 indicating                                                                                            
-            a BUY of 1000 shares, -1000.0 indicating a SELL of 1000 shares, and 0.0 indicating NOTHING.                                                                                           
-            Values of +2000 and -2000 for trades are also legal when switching from long to short or short to                                                                                         
-            long so long as net holdings are constrained to -1000, 0, and 1000.                                                                                           
-        :rtype: pandas.DataFrame                                                                                          
-        """                                                                                           
+                                                                                       
         syms = [symbol]                                                                                                                                                               
         dates = pd.date_range(sd, ed)                                                                                         
         prices_all = ut.get_data(syms, dates)  # automatically adds SPY 
@@ -160,9 +118,5 @@ class StrategyLearner(object):
                     trades.iloc[i, 0] = 2000
 
         return trades
-    
-
-if __name__ == "__main__":                                                                                            
-    print("One does not simply think up a strategy")                                                                                          
-	  	   		     		  		  		    	 		 		   		 		  
+    	  		    	 		 		   		 		  
   		  	   		     		  		  		    	 		 		   		 		  
